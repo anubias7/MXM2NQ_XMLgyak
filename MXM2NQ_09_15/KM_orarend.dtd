@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT lectures (lecture+)>
+<!ELEMENT lecture (subject,date,place,teacher,faculty)>
+<!ELEMENT subject (#PCDATA)>
+<!ELEMENT date (day,start,end)>
+<!ELEMENT day (#PCDATA)>
+<!ELEMENT start (#PCDATA)>
+<!ELEMENT end (#PCDATA)>
+<!ELEMENT place (#PCDATA)>
+<!ELEMENT teacher (#PCDATA)>
+<!ELEMENT faculty (#PCDATA)>
+<!ATTLIST lecture id ID #REQUIRED>
+<!ATTLIST lecture type CDATA #REQUIRED>
