@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <title>Kérdőív</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            background: steelblue;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group--wrapper {
+            margin-bottom: 100px;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        input[type="number"] {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>HTML5</h2>
+
+    <form action="/feldolgozo.php" method="POST">
+        <div class="input-group--wrapper">
+            <div class="input-group">
+                <label for="nev">Név:</label>
+                <input id="nev" type="text" name="nev" placeholder="Írd be a neved!" required />
+            </div>
+
+            <div class="input-group">
+                <label for="kod">PIN kód:</label>
+                <input id="kod" type="password" name="kod" placeholder="Írd be a PIN-kódod!" required />
+            </div>
+
+            <div class="input-group">
+                <label for="gyumolcs">Kedvenc gyümölcs:</label>
+                <input id="gyumolcs" type="text" name="gyumolcs" />
+            </div>
+
+            <div class="input-group">
+                <label for="eletkor">Életkor:</label>
+                <input id="eletkor" type="number" min="0" step="1" name="eletkor" />
+            </div>
+
+            <div class="input-group">
+                <label for="labmeret">Lábméret:</label>
+                <input id="labmeret" type="number" min="0" name="labmeret" />
+            </div>
+
+            <div class="input-group">
+                <label for="onbizalom" style="margin-right: 10px;">Önbizalom:</label>
+                0 <input id="onbizalom" type="range" min="0" max="100" name="onbizalom" style="width: 400px;" /> 100
+            </div>
+        </div>
+
+        <div>
+            <button type="submit">ELKÜLDÖM</button>
+            <button type="submit" formnovalidate="formnovalidate">Elküldöm ellenőrzés nélkül</button>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

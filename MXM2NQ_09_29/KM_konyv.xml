@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book id='k1'>
+        <title>Inside the machine</title>
+        <author>Jon Stokes</author>
+        <release_year>2015</release_year>
+        <publisher>No Starch Press</publisher>
+    </book>
+    
+    <book id = 'k2'>
+        <title>Design patterns : elements of reusable object-oriented software </title>
+        <author>Erich Galma, Richard Helm, Ralph Johnson, John Vlissides</author>
+        <release_year>1994</release_year>
+        <publisher>Addison Wesley</publisher>
+    </book>
+    
+    <book id = 'k3'>
+        <title>Code: The Hidden Language of Computer Hardware and Software </title>
+        <author>Charles Petzold</author>
+        <release_year>2000</release_year>
+        <publisher>Microsoft Press</publisher>
+    </book>
+</books>
