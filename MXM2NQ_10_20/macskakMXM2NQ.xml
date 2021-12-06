@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cats xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="macskakMXM2NQ.xsd">
+    <!--<!DOCTYPE cats SYSTEM "macskakMXM2NQ.dtd">
+    <cats> -->
+    <cat id="c-1">
+        <name>Macsek</name>
+        <age>5</age>
+        <breed>Brit rövidszőrű</breed>
+    </cat>
+    <cat id="c-2">
+        <name>Kandúr</name>
+        <age>1.5</age>
+        <breed>Keverék</breed>
+    </cat>
+    <cat id="c-3">
+        <name>Foltos</name>
+        <age>3</age>
+        <breed>Házi macska</breed>
+    </cat>
+</cats>

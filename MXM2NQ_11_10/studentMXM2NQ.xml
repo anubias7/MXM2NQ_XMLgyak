@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<class>
+    <student id="01">
+        <keresztnév>Máté</keresztnév>
+        <vezetéknév>Kormos</vezetéknév>
+        <becenév>Máté</becenév>
+        <kor>23</kor>
+    </student>
+    <student id="02">
+        <keresztnév>Krisztofer</keresztnév>
+        <vezetéknév>Tóth</vezetéknév>
+        <becenév>Krisz</becenév>
+        <kor>20</kor>
+    </student>
+    <student id="03">
+        <keresztnév>Dominik</keresztnév>
+        <vezetéknév>Kozma</vezetéknév>
+        <becenév>Dom</becenév>
+        <kor>22</kor>
+    </student>
+</class>
