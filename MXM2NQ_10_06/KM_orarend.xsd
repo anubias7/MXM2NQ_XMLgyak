@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="lectures">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="lecture" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="subject" type="xs:string"></xs:element>
+                            <xs:element name="date">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="day" type="xs:string"></xs:element>
+                                        <xs:element name="start" type="xs:unsignedShort"></xs:element>
+                                        <xs:element name="end" type="xs:unsignedShort"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="place" type="xs:string"></xs:element>
+                            <xs:element name="teacher" type="xs:string"></xs:element>
+                            <xs:element name="faculty" type="xs:string"></xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+                        <xs:attribute name="type" type="xs:string" use="required"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

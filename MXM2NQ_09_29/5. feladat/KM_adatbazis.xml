@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE adatbazis SYSTEM "KM_adatbazis.dtd">
+
+<adatbazis>
+    <dolgozo kod="kod-1">
+        <nev>Dolgozó1</nev>
+        <fizetes>300000</fizetes>
+    </dolgozo>
+    <dolgozo kod="kod-2">
+        <nev>Dolgozó2</nev>
+        <fizetes>120000</fizetes>
+    </dolgozo>
+
+</adatbazis>

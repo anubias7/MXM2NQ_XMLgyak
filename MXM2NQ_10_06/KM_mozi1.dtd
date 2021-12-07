@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!ELEMENT mozi (film+)>
+<!ELEMENT film (rendezo+,szinesz+,iro+)>
+<!ELEMENT rendezo (#PCDATA)>
+<!ELEMENT szinesz (#PCDATA)>
+<!ELEMENT iro (#PCDATA)>
+<!ATTLIST film id CDATA #REQUIRED>
+<!ATTLIST rendezo id CDATA #REQUIRED>
+<!ATTLIST szinesz id CDATA #REQUIRED>
+<!ATTLIST iro id CDATA #REQUIRED>
+<!ATTLIST rendezo nev CDATA #REQUIRED>
+<!ATTLIST szinesz nev CDATA #REQUIRED>
+<!ATTLIST film mufaj CDATA #REQUIRED>

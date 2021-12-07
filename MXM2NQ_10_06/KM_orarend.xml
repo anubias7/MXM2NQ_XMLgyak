@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<lectures xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="KM_orarend.xsd">
+    <lecture id="xmle" type="lecture">
+        <subject> Adatkezelés XML-ben </subject>
+        <date>
+            <day> kedd </day>
+            <start> 1200 </start>
+            <end> 1400 </end>
+        </date>
+        <place> A2/I. előadó </place>
+        <teacher> Dr. Bednarik László </teacher>
+        <faculty> PTI </faculty>
+    </lecture>
+
+    <lecture id="xmlgy" type="practice">
+        <subject> Adatkezelés XML-ben </subject>
+        <date>
+            <day> szerda </day>
+            <start> 1000 </start>
+            <end> 1200 </end>
+        </date>
+        <place> In/202 </place>
+        <teacher> Dr. Bednarik László </teacher>
+        <faculty> PTI </faculty>
+    </lecture>
+
+    <lecture id="vallalati" type="practice">
+        <subject> Vállalati és pénzügyi rendszerek </subject>
+        <date>
+            <day> szerda </day>
+            <start> 1600 </start>
+            <end> 2000 </end>
+        </date>
+        <place> In/103 </place>
+        <teacher> Dr. Sasvári Péter </teacher>
+        <faculty> PTI </faculty>
+    </lecture>
+</lectures>

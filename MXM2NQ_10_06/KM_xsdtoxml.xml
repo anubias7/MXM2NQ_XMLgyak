@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ermodell xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="KM_ertoxsd.xsd">
+    <A a="a-1">
+        <b>
+            <x>xx</x>
+            <y>yy</y>
+        </b>
+        <Ac>
+            <d>dd</d>
+            <e>ee</e>
+        </Ac>
+    </A>
+    <B a="a-2">
+        <b>
+            <x>xx2</x>
+            <y>yy2</y>
+        </b>
+    </B>
+    <C a="a-3">
+        <Cb>Cb</Cb>
+    </C>
+    <RelAB Aid="a-1" Bid="a-2">
+        <c>cc</c>
+    </RelAB>
+    <RelBC Bid="a-2" Cid="a-3" />
+</ermodell>
