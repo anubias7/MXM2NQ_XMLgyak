@@ -1,0 +1,132 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="adatbazis">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="kolcsonzo" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="nev"> </xs:element>
+              <xs:element type="xs:byte" name="kolcsonzesek_szama"> </xs:element>
+              <xs:element name="cim">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:short" name="irSzam"> </xs:element>
+                    <xs:element type="xs:string" name="varos"> </xs:element>
+                    <xs:element type="xs:string" name="utca"> </xs:element>
+                    <xs:element type="xs:string" name="hazszam"> </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="kkod"> </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="konyv" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="cim"> </xs:element>
+              <xs:element type="xs:string" name="kiado"> </xs:element>
+              <xs:element type="xs:short" name="megjelenes_datuma"> </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:short" name="ISBN"> </xs:attribute>
+            <xs:attribute type="xs:string" name="knev"> </xs:attribute>
+            <xs:attribute type="xs:short" name="kkod" use="optional"> </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="szerzo" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="nev"> </xs:element>
+              <xs:element type="xs:short" name="irt_konyvek_szama"> </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:short" name="szid"> </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="konyvtar" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="elerhetoseg">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="xs:string" name="telefon_szam"> </xs:element>
+                        <xs:element type="xs:string" name="varos"> </xs:element>
+                        <xs:element type="xs:string" name="utca"> </xs:element>
+                        <xs:element type="xs:string" name="hazszam"> </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="knev"> </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dolgozo" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="nev"> </xs:element>
+              <xs:element type="xs:int" name="fizetes"> </xs:element>
+              <xs:element type="xs:string" name="vegzettseg" maxOccurs="unbounded"> </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:short" name="did"> </xs:attribute>
+            <xs:attribute type="xs:string" name="knev"> </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="irta">
+            <xs:complexType>
+              <xs:attribute type="xs:short" name="szerzo" use="required"> </xs:attribute>
+              <xs:attribute type="xs:short" name="konyv" use="required"> </xs:attribute>
+            </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:key name="kkod">
+      <xs:selector xpath="kolcsonzo"></xs:selector>
+      <xs:field xpath="@kkod"></xs:field>
+    </xs:key>
+    <xs:key name="ISBN">
+      <xs:selector xpath="konyv"></xs:selector>
+      <xs:field xpath="@ISBN"></xs:field>
+    </xs:key>
+    <xs:key name="knev">
+      <xs:selector xpath="konyvtar"></xs:selector>
+      <xs:field xpath="@knev"></xs:field>
+    </xs:key>
+    <xs:key name="did">
+      <xs:selector xpath="dolgozo"></xs:selector>
+      <xs:field xpath="@did"></xs:field>
+    </xs:key>
+    <xs:key name="szid">
+      <xs:selector xpath="szerzo"></xs:selector>
+      <xs:field xpath="@szid"></xs:field>
+    </xs:key>
+
+    <xs:keyref name="fk_konyvtar_dolgozo" refer="knev">
+      <xs:selector xpath="dolgozo"></xs:selector>
+      <xs:field xpath="@konyvtar"></xs:field>
+    </xs:keyref>
+    <xs:keyref name="fk_konyv_kolcsonzo" refer="kkod">
+      <xs:selector xpath="konyv"></xs:selector>
+      <xs:field xpath="@kkod"></xs:field>
+    </xs:keyref>
+    <xs:keyref name="fk_konyv_konyvtar" refer="knev">
+      <xs:selector xpath="konyv"></xs:selector>
+      <xs:field xpath="@knev"></xs:field>
+    </xs:keyref>
+    <xs:keyref name="fk_dolgozo_konyvtar" refer="knev">
+      <xs:selector xpath="dolgozo"></xs:selector>
+      <xs:field xpath="@knev"></xs:field>
+    </xs:keyref>
+    <xs:keyref name="fk_irta_szerzo" refer="szid">
+      <xs:selector xpath="irta"></xs:selector>
+      <xs:field xpath="@szerzo"></xs:field>
+    </xs:keyref>
+    <xs:keyref name="fk_irta_konyv" refer="ISBN">
+      <xs:selector xpath="irta"></xs:selector>
+      <xs:field xpath="@konyv"></xs:field>
+    </xs:keyref>
+
+
+
+
+
+  </xs:element>
+</xs:schema>
