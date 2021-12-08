@@ -69,7 +69,7 @@
     <irt_konyvek_szama>1</irt_konyvek_szama>
 </szerzo>
 <szerzo szid="2">
-    <nev>David J. Wetherall</nev>
+    <nev>Richard C. Atkinson</nev>
     <irt_konyvek_szama>1</irt_konyvek_szama>
 </szerzo>
 <szerzo szid="3">
@@ -77,8 +77,16 @@
     <irt_konyvek_szama>1</irt_konyvek_szama>
 </szerzo>
 <szerzo szid="4">
+    <nev>Andrew S. Tanenbaum</nev>
+    <irt_konyvek_szama>1</irt_konyvek_szama>
+</szerzo>
+<szerzo szid="5">
     <nev>Denkinger Géza</nev>
     <irt_konyvek_szama>2</irt_konyvek_szama>
+</szerzo>
+<szerzo szid="6">
+    <nev>Jókai Mór</nev>
+    <irt_konyvek_szama>1</irt_konyvek_szama>
 </szerzo>
 
 <konyvtar knev="Bródy Sándor Könyvtár">
@@ -125,5 +133,11 @@
 </dolgozo>
 
 <irta szerzo="1" konyv="1234" />
+<irta szerzo="2" konyv="1547" />
+<irta szerzo="5" konyv="4167" />
+<irta szerzo="3" konyv="5344" />
+<irta szerzo="4" konyv="5344" />
+<irta szerzo="6" konyv="4004" />
+<irta szerzo="5" konyv="7594" />
 
 </adatbazis>
