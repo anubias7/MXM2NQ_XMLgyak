@@ -62,7 +62,7 @@ public class DOMReadMXM2NQ {
       for (int j = 0; j < szerzo_nevek.getLength(); j++) {
         Node n = szerzo_nevek.item(j);
 
-        if (nNode.getNodeType() != Node.ELEMENT_NODE)
+        if (n.getNodeType() != Node.ELEMENT_NODE)
           continue;
 
         System.out.println("szerzo: " + n.getTextContent());
