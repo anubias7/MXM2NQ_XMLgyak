@@ -25,33 +25,27 @@ import org.xml.sax.SAXException;
 public class DOMModifyMXM2NQ {
     public static void main(String arg[]) throws IOException, ParserConfigurationException, SAXException,
             TransformerConfigurationException, TransformerException, XPathExpressionException {
-        // Get input and output file
-        File inputXMLFile = new File("XMLTaskB00P5Y/XMLB00P5Y.xml");
-        File outputXMLFile = new File("XMLTaskB00P5Y/XMLB00P5Y.out.xml");
-        // Get documentBuilder
+        // Input out fileok
+        File inputXMLFile = new File("../XMLMXM2NQ.xml");
+        File outputXMLFile = new File("../XMLMXM2NQ.out.xml");
+        // dbuilder létrehozása
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = factory.newDocumentBuilder();
 
-        // Get document and normalize root element
+        // dokumentum beolvasása
         Document inputDoc = dBuilder.parse(inputXMLFile);
         inputDoc.getDocumentElement().normalize();
 
-        // Apply modifications
-        changeAllatNevById(inputDoc, "a-1", "PiheCica");
-        addMegjegyzesToGondozasById(inputDoc, "g-11", "Nagyon rossz volt az állat!!");
+        // Módosítások végrehajtása
+        // Végzettség hozzáadása az egyik dolgozóhoz
+        addDolgozoVegzettseg("1", "Nyelvvizsga", inputDoc);
+        // Kölcsönző házszámának a módosítása
+        changeKolcsonzoHazszam("3", "666", inputDoc);
 
         // Write to file and console
         write(inputDoc, outputXMLFile);
     }
 
-    /**
-     * Write a Document to file and console
-     * 
-     * @param doc
-     * @param outputFile
-     * @throws TransformerException
-     * @throws UnsupportedEncodingException
-     */
     private static void write(Document doc, File outputFile)
             throws TransformerException, UnsupportedEncodingException {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -69,44 +63,31 @@ public class DOMModifyMXM2NQ {
         transf.transform(source, file);
     }
 
-    /**
-     * Állat nevének megváltoztatása id alapján
-     * 
-     * @param doc
-     * @param id
-     * @param newVal
-     */
-    private static void changeAllatNevById(Document doc, String id, String newVal) throws XPathExpressionException {
-        XPath xPath = XPathFactory.newInstance().newXPath();
-        String expression = "//allat[@aid='" + id + "']/nev";
-        NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(doc, XPathConstants.NODESET);
-        if (nodeList.getLength() != 1)
-            return;
-
-        Node node = nodeList.item(0);
-        node.setTextContent(newVal);
-    }
-
-    /**
-     * Megjegyzés hozzáadása egy gondozáshoz
-     * 
-     * @param doc
-     * @param id
-     * @param newVal
-     */
-    private static void addMegjegyzesToGondozasById(Document doc, String id, String newVal)
+    private static void addDolgozoVegzettseg(String dolgozoId, String vegzettseg, Document doc)
             throws XPathExpressionException {
         XPath xPath = XPathFactory.newInstance().newXPath();
-        String expression = "//gondozas[@gid='" + id + "']";
+        String expression = "//dolgozo[@did='" + dolgozoId + "']";
         NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(doc, XPathConstants.NODESET);
-        if (nodeList.getLength() != 1)
-            return;
 
-        Node node = nodeList.item(0);
-        Node megjegyzes = doc.createElement("megjegyzes");
-        megjegyzes.setTextContent(newVal);
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            Node n = nodeList.item(i);
 
-        node.appendChild(megjegyzes);
+            Node vegzettsegNode = doc.createElement("vegzettseg");
+            vegzettsegNode.setTextContent(vegzettseg);
+            n.appendChild(vegzettsegNode);
+        }
     }
 
+    private static void changeKolcsonzoHazszam(String kolcsonzoId, String hazszam, Document doc)
+            throws XPathExpressionException {
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        String expression = "//kolcsonzo[@kkod='" + kolcsonzoId + "']/cim/hazszam";
+        NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(doc, XPathConstants.NODESET);
+
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            Node n = nodeList.item(i);
+
+            n.setTextContent(hazszam);
+        }
+    }
 }

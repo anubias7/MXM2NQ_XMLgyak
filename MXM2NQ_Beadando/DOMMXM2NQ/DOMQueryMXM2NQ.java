@@ -1,7 +1,5 @@
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -21,56 +19,59 @@ public class DOMQueryMXM2NQ {
     public static void main(String arg[])
             throws SAXException, IOException, ParserConfigurationException, XPathExpressionException {
 
-        File inputFile = new File("XMLMXM2NQ.xml");
-
+        //input file megnyitása
+        File inputFile = new File("..//XMLMXM2NQ.xml");
+        
+        //dbuilder létrehozása
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = factory.newDocumentBuilder();
 
+        //dokumentum beolvasása
         Document doc = dBuilder.parse(inputFile);
         doc.getDocumentElement().normalize();
 
+        System.out.println("Miskolci kölcsönzők nevei");
+        listKolcsonzokByCity("Miskolc", doc);
+        System.out.println("");
+
+        System.out.println("Denkinger Géza könyveinek címei");
+        listKonyvCimekBySzerzo("Denkinger Géza", doc);
+        System.out.println("");
+
+    }
+
+    private static void listKolcsonzokByCity(String city, Document doc) throws XPathExpressionException {
         // Build XPath tree
         XPath xPath = XPathFactory.newInstance().newXPath();
 
-        int inputCode = 0;
-        System.out.println("Menu: ");
-        System.out.println("1) - A miskolci kölcsönzők nevei");
-        System.out.println("2) - A 2018-ban és attól később született állatok lekérdezése");
-        System.out.println("3) - December havi nyitvatartás lekérdezése");
-        System.out.println("4) - Az utolsó 3 takarítás lekérdezése");
-        System.out.println("Más billentyű) - Kilépés");
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String input = br.readLine();
+        String expression = "//kolcsonzo[./cim/varos='" + city + "']/nev";
+        NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(doc, XPathConstants.NODESET);
 
-        try {
-            inputCode = Integer.parseInt(input);
-        } catch (Exception e) {
-            inputCode = 0;
+        for (int j = 0; j < nodeList.getLength(); j++) {
+            Node n = nodeList.item(j);
+
+            if (n.getNodeType() != Node.ELEMENT_NODE)
+                continue;
+
+            System.out.println("Kölcsönző neve: " + n.getTextContent());
         }
+    }
 
-        String expression = "";
+    private static void listKonyvCimekBySzerzo(String szerzoNev, Document doc) throws XPathExpressionException {
+        // XPath fa létrehozása
+        XPath xPath = XPathFactory.newInstance().newXPath();
 
-        switch (inputCode) {
-            case 1:
-                expression = "//kolcsonzo/nev[../varos='Miskolc']";
-                break;
-            case 2:
-                expression = "//allat[number(translate(./szuletes-ideje,'-','')) > 20180101]";
-                break;
-            case 3:
-                expression = "//nyitvatartas[@honap=12]";
-                break;
-            case 4:
-                expression = "//takaritas[position() > last() - 3]";
-                break;
-            default:
-                System.out.println("Bye");
-                return;
-        }
+        String expression = "//konyv[@ISBN=//irta[@szerzo=//szerzo[./nev='" +
+                szerzoNev + "']/@szid]/@konyv]/cim";
 
         NodeList nodeList = (NodeList) xPath.compile(expression).evaluate(doc, XPathConstants.NODESET);
-        for (int i = 0; i < nodeList.getLength(); i++) {
-            Node node = nodeList.item(i);
+        for (int j = 0; j < nodeList.getLength(); j++) {
+            Node n = nodeList.item(j);
+
+            if (n.getNodeType() != Node.ELEMENT_NODE)
+                continue;
+
+            System.out.println("Könyv címe: " + n.getTextContent());
         }
     }
 }

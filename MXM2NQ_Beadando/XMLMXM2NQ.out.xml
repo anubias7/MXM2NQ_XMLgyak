@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<adatbazis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemaMXM2NQ.xsd">
+    
+    <kolcsonzo kkod="1">
+            
+        <nev>Horváth Anett</nev>
+            
+        <kolcsonzesek_szama>1</kolcsonzesek_szama>
+            
+        <cim>
+                    
+            <irSzam>3300</irSzam>
+                    
+            <varos>Eger</varos>
+                    
+            <utca>Szálloda u.</utca>
+                    
+            <hazszam>6</hazszam>
+                
+        </cim>
+        
+    </kolcsonzo>
+    
+    <kolcsonzo kkod="2">
+            
+        <nev>Erdős László</nev>
+            
+        <kolcsonzesek_szama>2</kolcsonzesek_szama>
+            
+        <cim>
+                    
+            <irSzam>3515</irSzam>
+                    
+            <varos>Miskolc</varos>
+                    
+            <utca>Mednyánszky László u.</utca>
+                    
+            <hazszam>11</hazszam>
+                
+        </cim>
+        
+    </kolcsonzo>
+    
+    <kolcsonzo kkod="3">
+            
+        <nev>Hevesi László</nev>
+            
+        <kolcsonzesek_szama>0</kolcsonzesek_szama>
+            
+        <cim>
+                    
+            <irSzam>3515</irSzam>
+                    
+            <varos>Miskolc</varos>
+                    
+            <utca>Vörösmatry Mihály u.</utca>
+                    
+            <hazszam>666</hazszam>
+                
+        </cim>
+        
+    </kolcsonzo>
+    
+    <konyv ISBN="1234" kkod="1" knev="Bródy Sándor Könyvtár">
+            
+        <cim>Harry Potter és a bölcsek köve</cim>
+            
+        <kiado>Animus</kiado>
+            
+        <megjelenes_datuma>1997</megjelenes_datuma>
+        
+    </konyv>
+    
+    <konyv ISBN="1547" knev="Bródy Sándor Könyvtár">
+            
+        <cim>Pszichológia</cim>
+            
+        <kiado>Osiris</kiado>
+            
+        <megjelenes_datuma>2005</megjelenes_datuma>
+        
+    </konyv>
+    
+    <konyv ISBN="4167" kkod="2" knev="Miskolci Egyetemi Könyvtár, Levéltár">
+            
+        <cim>Valószínűségszámítás</cim>
+            
+        <kiado>Nemzedékek Tudása</kiado>
+            
+        <megjelenes_datuma>2001</megjelenes_datuma>
+        
+    </konyv>
+    
+    <konyv ISBN="5344" kkod="2" knev="Miskolci Egyetemi Könyvtár, Levéltár">
+            
+        <cim>Számítógép hálózatok</cim>
+            
+        <kiado>Panem Kft.</kiado>
+            
+        <megjelenes_datuma>2013</megjelenes_datuma>
+        
+    </konyv>
+    
+    <konyv ISBN="4004" knev="Bródy Sándor Könyvtár">
+            
+        <cim>Az Aranyember</cim>
+            
+        <kiado>Talentum Diákkönyvtár</kiado>
+            
+        <megjelenes_datuma>2010</megjelenes_datuma>
+        
+    </konyv>
+    
+    <konyv ISBN="7594" knev="Miskolci Egyetemi Könyvtár, Levéltár">
+            
+        <cim>Analízis</cim>
+            
+        <kiado>Nemzedékek Tudása</kiado>
+            
+        <megjelenes_datuma>1988</megjelenes_datuma>
+        
+    </konyv>
+    
+    <szerzo szid="1">
+            
+        <nev>J.K. Rowling</nev>
+            
+        <irt_konyvek_szama>1</irt_konyvek_szama>
+        
+    </szerzo>
+    
+    <szerzo szid="2">
+            
+        <nev>Richard C. Atkinson</nev>
+            
+        <irt_konyvek_szama>1</irt_konyvek_szama>
+        
+    </szerzo>
+    
+    <szerzo szid="3">
+            
+        <nev>David J. Wetherall</nev>
+            
+        <irt_konyvek_szama>1</irt_konyvek_szama>
+        
+    </szerzo>
+    
+    <szerzo szid="4">
+            
+        <nev>Andrew S. Tanenbaum</nev>
+            
+        <irt_konyvek_szama>1</irt_konyvek_szama>
+        
+    </szerzo>
+    
+    <szerzo szid="5">
+            
+        <nev>Denkinger Géza</nev>
+            
+        <irt_konyvek_szama>2</irt_konyvek_szama>
+        
+    </szerzo>
+    
+    <szerzo szid="6">
+            
+        <nev>Jókai Mór</nev>
+            
+        <irt_konyvek_szama>1</irt_konyvek_szama>
+        
+    </szerzo>
+    
+    <konyvtar knev="Bródy Sándor Könyvtár">
+            
+        <elerhetoseg>
+                    
+            <telefon_szam>(36) 516-632</telefon_szam>
+                    
+            <varos>Eger</varos>
+                    
+            <utca>Kossuth u.</utca>
+                    
+            <hazszam>16</hazszam>
+                
+        </elerhetoseg>
+        
+    </konyvtar>
+    
+    <konyvtar knev="Miskolci Egyetemi Könyvtár, Levéltár">
+            
+        <elerhetoseg>
+                    
+            <telefon_szam>+36-46-565-320</telefon_szam>
+                    
+            <varos>Miskolc</varos>
+                    
+            <utca>Egyetemváros</utca>
+                    
+            <hazszam>1</hazszam>
+                
+        </elerhetoseg>
+        
+    </konyvtar>
+    
+    <dolgozo did="1" knev="Bródy Sándor Könyvtár">
+            
+        <nev>Kis Anna</nev>
+            
+        <fizetes>100000</fizetes>
+            
+        <vegzettseg>8 általános</vegzettseg>
+            
+        <vegzettseg>Érettségi</vegzettseg>
+        
+        <vegzettseg>Nyelvvizsga</vegzettseg>
+    </dolgozo>
+    
+    <dolgozo did="2" knev="Bródy Sándor Könyvtár">
+            
+        <nev>Halász Péter</nev>
+            
+        <fizetes>120000</fizetes>
+            
+        <vegzettseg>Érettségi</vegzettseg>
+            
+        <vegzettseg>Informatikus OKJ</vegzettseg>
+        
+    </dolgozo>
+    
+    <dolgozo did="3" knev="Miskolci Egyetemi Könyvtár, Levéltár">
+            
+        <nev>Kovács Zsófia</nev>
+            
+        <fizetes>150000</fizetes>
+            
+        <vegzettseg>8 általános</vegzettseg>
+            
+        <vegzettseg>Érettségi</vegzettseg>
+            
+        <vegzettseg>Egyetemi Bsc Diploma</vegzettseg>
+        
+    </dolgozo>
+    
+    <dolgozo did="4" knev="Miskolci Egyetemi Könyvtár, Levéltár">
+            
+        <nev>Beregi Júlia</nev>
+            
+        <fizetes>110000</fizetes>
+            
+        <vegzettseg>8 általános</vegzettseg>
+            
+        <vegzettseg>Érettségi</vegzettseg>
+        
+    </dolgozo>
+    
+    <irta konyv="1234" szerzo="1"/>
+    
+    <irta konyv="1547" szerzo="2"/>
+    
+    <irta konyv="4167" szerzo="5"/>
+    
+    <irta konyv="5344" szerzo="3"/>
+    
+    <irta konyv="5344" szerzo="4"/>
+    
+    <irta konyv="4004" szerzo="6"/>
+    
+    <irta konyv="7594" szerzo="5"/>
+    
+</adatbazis>

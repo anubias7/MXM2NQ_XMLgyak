@@ -18,14 +18,14 @@ import org.xml.sax.SAXException;
 public class DOMReadMXM2NQ {
   public static void main(String arg[])
       throws SAXException, IOException, ParserConfigurationException, XPathExpressionException {
-    // Get file
+    // input file megnyitása
     File xmlFile = new File("../XMLMXM2NQ.xml");
 
-    // Get DocumentBuilder
+    // dbuilder létrehozása
     DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
     DocumentBuilder dBuilder = factory.newDocumentBuilder();
 
-    // Parse docuement and normalize
+    // dokumentum beolvasása
     Document doc = dBuilder.parse(xmlFile);
     doc.getDocumentElement().normalize();
 

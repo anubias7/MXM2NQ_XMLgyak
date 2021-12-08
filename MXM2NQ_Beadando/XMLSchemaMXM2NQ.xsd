@@ -10,7 +10,7 @@
               <xs:element name="cim">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:short" name="irSzam"> </xs:element>
+                    <xs:element type="iranyitoszam" name="irSzam"> </xs:element>
                     <xs:element type="xs:string" name="varos"> </xs:element>
                     <xs:element type="xs:string" name="utca"> </xs:element>
                     <xs:element type="xs:string" name="hazszam"> </xs:element>
@@ -18,7 +18,7 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute type="xs:byte" name="kkod"> </xs:attribute>
+            <xs:attribute type="xs:byte" name="kkod" use="required"> </xs:attribute>
           </xs:complexType>
         </xs:element>
         <xs:element name="konyv" maxOccurs="unbounded" minOccurs="1">
@@ -28,9 +28,9 @@
               <xs:element type="xs:string" name="kiado"> </xs:element>
               <xs:element type="xs:short" name="megjelenes_datuma"> </xs:element>
             </xs:sequence>
-            <xs:attribute type="xs:short" name="ISBN"> </xs:attribute>
-            <xs:attribute type="xs:string" name="knev"> </xs:attribute>
-            <xs:attribute type="xs:short" name="kkod" use="optional"> </xs:attribute>
+            <xs:attribute type="xs:short" name="ISBN" use="required"> </xs:attribute>
+            <xs:attribute type="xs:string" name="knev" use="required"> </xs:attribute>
+            <xs:attribute type="xs:short" name="kkod" use="optional" use="required"> </xs:attribute>
           </xs:complexType>
         </xs:element>
         <xs:element name="szerzo" maxOccurs="unbounded" minOccurs="1">
@@ -39,7 +39,7 @@
               <xs:element type="xs:string" name="nev"> </xs:element>
               <xs:element type="xs:short" name="irt_konyvek_szama"> </xs:element>
             </xs:sequence>
-            <xs:attribute type="xs:short" name="szid"> </xs:attribute>
+            <xs:attribute type="xs:short" name="szid" use="required"> </xs:attribute>
           </xs:complexType>
         </xs:element>
         <xs:element name="konyvtar" maxOccurs="unbounded" minOccurs="1">
@@ -56,7 +56,7 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute type="xs:string" name="knev"> </xs:attribute>
+            <xs:attribute type="xs:string" name="knev" use="required"> </xs:attribute>
           </xs:complexType>
         </xs:element>
         <xs:element name="dolgozo" maxOccurs="unbounded" minOccurs="1">
@@ -64,13 +64,13 @@
             <xs:sequence>
               <xs:element type="xs:string" name="nev"> </xs:element>
               <xs:element type="xs:int" name="fizetes"> </xs:element>
-              <xs:element type="xs:string" name="vegzettseg" maxOccurs="unbounded"> </xs:element>
+              <xs:element type="vegzettseg" name="vegzettseg" maxOccurs="unbounded"> </xs:element>
             </xs:sequence>
-            <xs:attribute type="xs:short" name="did"> </xs:attribute>
-            <xs:attribute type="xs:string" name="knev"> </xs:attribute>
+            <xs:attribute type="xs:short" name="did" use="required"> </xs:attribute>
+            <xs:attribute type="xs:string" name="knev" use="required"> </xs:attribute>
           </xs:complexType>
         </xs:element>
-        <xs:element name="irta">
+        <xs:element name="irta" maxOccurs="unbounded">
             <xs:complexType>
               <xs:attribute type="xs:short" name="szerzo" use="required"> </xs:attribute>
               <xs:attribute type="xs:short" name="konyv" use="required"> </xs:attribute>
@@ -123,10 +123,19 @@
       <xs:selector xpath="irta"></xs:selector>
       <xs:field xpath="@konyv"></xs:field>
     </xs:keyref>
-
-
-
-
-
   </xs:element>
+  <xs:simpleType name="iranyitoszam">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[1-9]{1}[0-9]{3}"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="vegzettseg">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="Nyelvvizsga"></xs:pattern>
+      <xs:pattern value="8 általános"></xs:pattern>
+      <xs:pattern value="Érettségi"></xs:pattern>
+      <xs:pattern value="Egyetemi Bsc Diploma"></xs:pattern>
+      <xs:pattern value="Informatikus OKJ"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
 </xs:schema>
