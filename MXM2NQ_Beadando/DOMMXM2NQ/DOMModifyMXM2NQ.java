@@ -25,7 +25,7 @@ import org.xml.sax.SAXException;
 public class DOMModifyMXM2NQ {
     public static void main(String arg[]) throws IOException, ParserConfigurationException, SAXException,
             TransformerConfigurationException, TransformerException, XPathExpressionException {
-        // Input out fileok
+        // Input output file-ok
         File inputXMLFile = new File("../XMLMXM2NQ.xml");
         File outputXMLFile = new File("../XMLMXM2NQ.out.xml");
         // dbuilder létrehozása
@@ -42,7 +42,7 @@ public class DOMModifyMXM2NQ {
         // Kölcsönző házszámának a módosítása
         changeKolcsonzoHazszam("3", "666", inputDoc);
 
-        // Write to file and console
+        // Kiíratás console-ba és file-ba
         write(inputDoc, outputXMLFile);
     }
 

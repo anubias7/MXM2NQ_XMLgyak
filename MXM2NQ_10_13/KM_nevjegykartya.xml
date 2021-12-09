@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nevjegykartyak xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="KM_nevjegykartya.xsd">
+    <nevjegykartya>
+        <nev>Kormos Máté</nev>
+        <ceg>
+            <nev>Cégem</nev>
+            <cim>
+                <iranyitoszam>3304</iranyitoszam>
+                <varos>Eger</varos>
+                <utca>Petőfi utca</utca>
+                <hazszam>10</hazszam>
+            </cim>
+            <telefonszam>06201234567</telefonszam>
+            <weblap>https://cegem.hu</weblap>
+        </ceg>
+        <beosztas>CEO</beosztas>
+        <telefonszam>06201234567</telefonszam>
+        <email>seo@cegem.hu</email>
+    </nevjegykartya>
+    <nevjegykartya>
+        <nev>Beosztott Máté</nev>
+        <ceg>
+            <nev>Cégem</nev>
+            <cim>
+                <iranyitoszam>3304</iranyitoszam>
+                <varos>Eger</varos>
+                <utca>Petőfi utca</utca>
+                <hazszam>10</hazszam>
+            </cim>
+            <telefonszam>06201234567</telefonszam>
+            <weblap>https://cegem.hu</weblap>
+        </ceg>
+        <beosztas>Beosztott</beosztas>
+        <telefonszam>06201234569</telefonszam>
+        <email>seo@cegem.hu</email>
+    </nevjegykartya>
+</nevjegykartyak>

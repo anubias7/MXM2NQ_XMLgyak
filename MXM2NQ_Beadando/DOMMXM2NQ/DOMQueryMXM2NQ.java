@@ -41,7 +41,7 @@ public class DOMQueryMXM2NQ {
     }
 
     private static void listKolcsonzokByCity(String city, Document doc) throws XPathExpressionException {
-        // Build XPath tree
+        // XPath fa létrehozása
         XPath xPath = XPathFactory.newInstance().newXPath();
 
         String expression = "//kolcsonzo[./cim/varos='" + city + "']/nev";

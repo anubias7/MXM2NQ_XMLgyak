@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+    <head />
+    <body>
+        <h2>Kormos Máté</h2>
+        <table border="1" cellpadding="5px">
+            <tr bgcolor="#9acd32">
+                <th>ID</th>
+                <th>Type</th>
+                <th>Subject</th>
+                <th colspan="3">Date</th>
+                <th>Place</th>
+                <th>Teacher</th>
+                <th>Faculty</th>
+            </tr>
+            <tr>
+                <td>xmle</td>
+                <td>lecture</td>
+                <td> Adatkezelés XML-ben </td>
+                <td> kedd </td>
+                <td> 1200 </td>
+                <td> 1400 </td>
+                <td> A2/I. előadó </td>
+                <td> Dr. Bednarik László </td>
+                <td> PTI </td>
+            </tr>
+            <tr>
+                <td>xmlgy</td>
+                <td>practice</td>
+                <td> Adatkezelés XML-ben </td>
+                <td> szerda </td>
+                <td> 1000 </td>
+                <td> 1200 </td>
+                <td> In/202 </td>
+                <td> Dr. Bednarik László </td>
+                <td> PTI </td>
+            </tr>
+            <tr>
+                <td>vallalati</td>
+                <td>practice</td>
+                <td> Vállalati és pénzügyi rendszerek </td>
+                <td> szerda </td>
+                <td> 1600 </td>
+                <td> 2000 </td>
+                <td> In/103 </td>
+                <td> Dr. Sasvári Péter </td>
+                <td> PTI </td>
+            </tr>
+        </table>
+    </body>
+</html>

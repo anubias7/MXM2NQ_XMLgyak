@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!ELEMENT users (user+)>
+<!ELEMENT user (#PCDATA)>
+<!ATTLIST user first-name CDATA #REQUIRED>
+<!ATTLIST user last-name CDATA #REQUIRED>
+<!ATTLIST user profession CDATA #REQUIRED>
+<!ATTLIST user id ID #REQUIRED>

@@ -35,7 +35,7 @@ public class DOMReadMXM2NQ {
 
     XPath xPath = XPathFactory.newInstance().newXPath();
 
-    // könyv beolvasasa
+    // könyv beolvasása
     NodeList nList = doc.getElementsByTagName("konyv");
 
     for (int i = 0; i < nList.getLength(); i++) {

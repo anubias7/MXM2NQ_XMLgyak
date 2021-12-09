@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<users xmlns="domMXM2NQ">
+  <user id="u-1">
+    <firstname>Kormos</firstname>
+    <lastname>Máté</lastname>
+    <profession>programozo</profession>
+  </user>
+  <user id="u-2">
+    <firstname>Kormos</firstname>
+    <lastname>Gábor</lastname>
+    <profession>programozo</profession>
+  </user>
+</users>

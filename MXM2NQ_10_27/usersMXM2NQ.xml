@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<!DOCTYPE users SYSTEM "usersMXM2NQ.dtd">-->
+<!--<users>-->
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="usersMXM2NQ.xsd">
+    <user id="u-1" first-name="Máté" last-name="Kormos" profession="programozo"></user>
+    <user id="u-2" first-name="Gábor" last-name="Programozo" profession="programozo"></user>
+</users>
